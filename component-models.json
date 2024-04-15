@@ -192,13 +192,13 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "name",
+        "name": "image",
         "label": "Background image",
         "multi": false
       },
       {
         "component": "text",
-        "name": "name",
+        "name": "pretitle",
         "value": "",
         "label": "Pre title",
         "valueType": "string"
