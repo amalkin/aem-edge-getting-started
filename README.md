@@ -1,5 +1,5 @@
 # Your Project's Title...
-Your project's description...
+A site hosted on Git, structure hosted as a Site based upon a Template in AEMaaCS and edited via the Universal Editor.
 
 ![alt text](assets/homescreen.png)
 
@@ -10,8 +10,8 @@ Page: https://main--aem-edge-getting-started--amalkin.hlx.page/
 SEE: https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/aem-authoring/edge-dev-getting-started
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Preview: https://main--aem-edge-getting-started--amalkin.hlx.page/
+- Live: https://main--aem-edge-getting-started--amalkin.hlx.live/
 
 ## Installation
 
