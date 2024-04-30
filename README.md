@@ -5,6 +5,10 @@ Your project's description...
 
 [Site created](https://author-p46152-e633525.adobeaemcloud.com/ui#/@alastairmalkin/aem/universal-editor/canvas/author-p46152-e633525.adobeaemcloud.com/content/aem-edge-getting-started/index.html)
 
+Page: https://main--aem-edge-getting-started--amalkin.hlx.page/
+
+SEE: https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/aem-authoring/edge-dev-getting-started
+
 ## Environments
 - Preview: https://main--{repo}--{owner}.hlx.page/
 - Live: https://main--{repo}--{owner}.hlx.live/
