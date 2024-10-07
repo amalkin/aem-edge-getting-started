@@ -30,6 +30,7 @@
       "columns",
       "teaser",
       "quote",
+      "content-fragment",
       "fragment"
     ]
   },
