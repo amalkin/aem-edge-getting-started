@@ -23,8 +23,8 @@ function getMetadata(name) {
     fetch(`${aem}/graphql/execute.json/aem-demo-assets/adventure-by-slug;slug=${slugID.textContent}`)
       .then(response => response.json())
       .then(response => {
-        const { primaryImage, title, cityNickName, cityDescription } = response.data.adventureList.items[0];
-        const imageURL = `${aem}${primaryImage._dynamicUrl}`;
+        const { primaryImage, title, description } = response.data.adventureList.items[0];
+        const imageURL = `${aem}${primaryImage._path}`;
   
         destinationDiv.innerHTML = `
           <div class='destination-image'>
@@ -32,6 +32,8 @@ function getMetadata(name) {
           </div>
           <div class='destination-content'>
             <div class='destination-content-title'><h3>${title}</h3></div>
+          <div class='destination-content-description'><p>${description.plaintext}</p></div>
+          <div class='destination-content-description'><p>${description.html}</p></div>
           </div>
         `;
       })
