@@ -7,7 +7,7 @@ function getMetadata(name) {
   }
   
   //const aem = "http://localhost:4503";
-  const aem = "https://publish-p46152-e633525.adobeaemcloud.com/";
+  const aem = "https://publish-p46152-e633525.adobeaemcloud.com";
   
   export default function decorate(block) {
   
@@ -23,15 +23,15 @@ function getMetadata(name) {
     fetch(`${aem}/graphql/execute.json/aem-demo-assets/adventure-by-slug;slug=${slugID.textContent}`)
       .then(response => response.json())
       .then(response => {
-        const { primaryImage, adventureTitle, cityNickName, cityDescription } = response.data.adventureList.items[0];
+        const { primaryImage, title, cityNickName, cityDescription } = response.data.adventureList.items[0];
         const imageURL = `${aem}${primaryImage._dynamicUrl}`;
   
         destinationDiv.innerHTML = `
           <div class='destination-image'>
-            <img src="${imageURL}" alt="${adventureTitle}">
+            <img src="${imageURL}" alt="${title}">
           </div>
           <div class='destination-content'>
-            <div class='destination-content-title'><h3>${adventureTitle}</h3></div>
+            <div class='destination-content-title'><h3>${title}</h3></div>
           </div>
         `;
       })
