@@ -20,52 +20,52 @@ async function openWithUniversalEditor(event) {
     // open the editor in a new tab
     window.open(editorUrl, '_blank');
 }
-  
+
 async function getElement(sk, selector) {
-let elt = sk.shadowRoot.querySelector(selector);
-return new Promise((resolve) => {
-    const check = () => {
-    elt = sk.shadowRoot.querySelector(selector);
-    if (elt) {
-        resolve(elt);
-    } else {
-        setTimeout(check, 100);
-    }
-    };
-    check();
-});
+    let elt = sk.shadowRoot.querySelector(selector);
+    return new Promise((resolve) => {
+        const check = () => {
+        elt = sk.shadowRoot.querySelector(selector);
+        if (elt) {
+            resolve(elt);
+        } else {
+            setTimeout(check, 100);
+        }
+        };
+        check();
+    });
 }
-  
+
 function shouldHidePlugin(plugin) {
     const [pluginCls] = plugin.classList;
     return ['edit', 'reload', 'publish', 'delete', 'unpublish'].indexOf(pluginCls) !== -1;
 }
-  
+
 async function customizeButtons(sk) {
-const container = await getElement(sk, '.plugin-container');
-container.style.visibility = 'hidden';
+    const container = await getElement(sk, '.plugin-container');
+    container.style.visibility = 'hidden';
 
-// hide the default buttons once
-container.querySelectorAll('.plugin').forEach((plugin) => {
-    if (shouldHidePlugin(plugin)) {
-    plugin.style.display = 'none';
-    }
-});
-// listen for new buttons and hide them
-new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => mutation.addedNodes.forEach((node) => {
-    if (shouldHidePlugin(node)) {
-        node.style.display = 'none';
-    }
-    }));
-}).observe(container, { childList: true });
+    // hide the default buttons once
+    container.querySelectorAll('.plugin').forEach((plugin) => {
+        if (shouldHidePlugin(plugin)) {
+            plugin.style.display = 'none';
+        }
+    });
+    // listen for new buttons and hide them
+    new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => mutation.addedNodes.forEach((node) => {
+        if (shouldHidePlugin(node)) {
+            node.style.display = 'none';
+        }
+        }));
+    }).observe(container, { childList: true });
 
-container.style.visibility = 'visible';
-  
+    container.style.visibility = 'visible';
+    
     // initialize the custom edit button
     sk.addEventListener('custom:aemedit', openWithUniversalEditor);
-  }
-  
+}
+
 // eslint-disable-next-line import/prefer-default-export
 export async function initSidekick() {
     let sk = document.querySelector('helix-sidekick');
