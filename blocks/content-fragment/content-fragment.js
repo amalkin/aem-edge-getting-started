@@ -32,7 +32,7 @@ function getMetadata(name) {
           </div>
           <div class='destination-content'>
             <div class='destination-content-title'><h3>${title}</h3></div>
-            <div class='destination-content-title'>Sub title and again</div>
+            <div class='destination-content-title'>Sub title and</div>
             <div class='destination-content-description'><p>${description.plaintext}</p></div>
             <div class='destination-content-description'><p>${description.html}</p></div>
           </div>
